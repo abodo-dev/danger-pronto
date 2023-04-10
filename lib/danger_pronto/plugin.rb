@@ -29,7 +29,7 @@ module Danger
     def pronto(specified_commit = nil)
       commit = "origin/master"
       commit = specified_commit if !specified_commit.nil?
-      pronto_output = `#{'bundle exec ' if File.exists?('Gemfile')}pronto run -f json -c #{commit}`
+      pronto_output = `#{'bundle exec ' if File.exist?('Gemfile')}pronto run -f json -c #{commit}`
       JSON.parse(pronto_output)
     end
 
